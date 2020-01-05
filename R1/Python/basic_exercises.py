@@ -9,15 +9,31 @@ max = max(4,9)
 # print (max)
 
 def max_three(n1, n2, n3):
-    if  n1 > n2:
+    if  n1 > n2 & n1 > n3:
         return n1
-    if  n2 > n3:
+    if  n2 > n3 & n2 > n1:
         return n2
-    if  n3 > n1:
+    if  n3 > n1 & n3 > n2:
         return n3
 
-max_three = max_three(1,5,7)
+max_three = max_three(1,52,7)
 # print (max_three)
+
+def max_in_list(array):
+    max = 0
+    for x in range(0, len(array)):
+        try:
+            if array[x] > array[x + 1]:
+                if array[x] > max:
+                    max = array[x]
+
+        except IndexError:
+            return max
+        
+    return max
+
+max_in_list = max_in_list([1,110,1,1,86,4,1,76,750,700])
+print (max_in_list)
 
 def string_length(string):
     return len(string)
@@ -86,7 +102,7 @@ def generate_n_characters(n, character):
         s = s + character
     return s
 
-text = input("Ingrese un numero que desea evaluar con generate_n_characters(): ")
-character = input("Ingrese un caracter que desea evaluar con generate_n_characters(): ")
-characters = generate_n_characters(text, character)
-print (characters)
+# text = input("Ingrese un numero que desea evaluar con generate_n_characters(): ")
+# character = input("Ingrese un caracter que desea evaluar con generate_n_characters(): ")
+# characters = generate_n_characters(text, character)
+# print (characters)
